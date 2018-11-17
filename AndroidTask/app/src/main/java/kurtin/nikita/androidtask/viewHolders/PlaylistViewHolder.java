@@ -1,22 +1,58 @@
 package kurtin.nikita.androidtask.viewHolders;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import kurtin.nikita.androidtask.R;
+import kurtin.nikita.androidtask.models.Playlist;
+import kurtin.nikita.androidtask.models.Video;
+import kurtin.nikita.androidtask.utils.ImageManager;
 
 /**
  * Created by Nikita Kurtin on 11/16/18.
  */
 public class PlaylistViewHolder extends RecyclerView.ViewHolder {
 
-    private final TextView playlistView;
+    private Playlist playlist;
+    private final View playlistView;
 
-    public PlaylistViewHolder(TextView v){
+    public PlaylistViewHolder(View v){
         super(v);
-        this.playlistView = v;
+        playlistView = v;
     }
 
-    public TextView getPlaylistView(){
+    public void setPlaylist(Playlist playlist) {
+        this.playlist = playlist;
+    }
+
+    public Playlist getPlaylist() {
+        return playlist;
+    }
+
+    public View getPlaylistView(){
         return this.playlistView;
+    }
+
+    public void showPlaylistTitle(){
+        TextView playlistTitle = playlistView.findViewById(R.id.playlistTitle);
+        playlistTitle.setText(playlist.getTitle());
+    }
+
+    public void showPlaylistVideos(){
+        ViewGroup videosView = playlistView.findViewById(R.id.playlistVideos);
+        for(Video video : playlist.getVideos()){
+            View videoView = LayoutInflater.from(playlistView.getContext()).inflate(R.layout.item_video, null);
+            videoView.setTag(video);
+            TextView videoTtl = videoView.findViewById(R.id.videoTtl);
+            videoTtl.setText(video.getTitle());
+            ImageView videoImg = videoView.findViewById(R.id.videoImg);
+            ImageManager.showImage(videoImg, video.getImgUrl());
+            videosView.addView(videoView);
+        }
     }
 
 }

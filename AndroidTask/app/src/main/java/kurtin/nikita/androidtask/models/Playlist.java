@@ -9,10 +9,13 @@ public class Playlist {
     private final String title;
     private final Video [] videos;
 
+    private boolean isActive;
+
     public Playlist(String id, String title, Video[] videos) {
         this.id = id;
         this.title = title;
         this.videos = videos;
+        this.isActive = false;
     }
 
     public String getId() {
@@ -25,5 +28,13 @@ public class Playlist {
 
     public Video[] getVideos() {
         return videos;
+    }
+
+    public void toggleIsActive(){
+        isActive = !isActive;
+    }
+
+    public boolean getIsActive(){
+        return isActive;
     }
 }

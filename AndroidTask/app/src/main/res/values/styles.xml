@@ -16,12 +16,15 @@
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:paddingTop">@dimen/padding</item>
         <item name="android:paddingBottom">@dimen/padding</item>
+        <item name="android:gravity">center</item>
         <item name="android:background">@drawable/textview_press</item>
     </style>
 
     <dimen name="padding">2sp</dimen>
     <dimen name="defaultText">24sp</dimen>
     <dimen name="smallBorder">1dp</dimen>
-    <dimen name="bigBorder">2dp</dimen>
+    <dimen name="bigBorder">4dp</dimen>
+    <dimen name="thumbnailWidth">120dp</dimen>
+    <dimen name="thumbnailHeight">90dp</dimen>
 
 </resources>

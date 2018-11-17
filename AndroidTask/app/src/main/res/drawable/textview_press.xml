@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Simple drawable effect customization -->
-    <item android:state_pressed="true">
+    <item android:state_pressed="true" >
         <shape>
-            <stroke android:width="@dimen/bigBorder" android:color="@color/colorPrimaryDark"/>
+            <stroke android:width="@dimen/bigBorder" android:color="@color/colorAccent"/>
+            <solid android:color="@color/light"/>
         </shape>
     </item>
     <item android:state_pressed="false">

@@ -52,8 +52,8 @@ public class CustomParser {
         Playlist [] playlists = new Playlist[playlistItems.length()];
         for(int i=0; i<playlistItems.length(); i++){
             playlists[i] = parsePlaylist(playlistItems.optJSONObject(i));
-            //TODO - finish from here
         }
+        return playlists;
     }
 
 }

@@ -31,21 +31,19 @@ public class ImageManager {
     }
 
     private static void asyncLoadImage(final ImageView img, final String url){
-        //First show some temp image (placeholder)
+        //First - show some temp image (placeholder)
         img.setImageResource(R.mipmap.youtube_default);
-        //Then load asynchronously
+        //Second - load asynchronously
         new Thread(){
             @Override
             public void run() {
                 try {
                     final Bitmap bm = BitmapFactory.decodeStream(new URL(url).openStream());
-                    //Store for the future reuse
-                    imagesFlyweight.put(url, bm);
+                    imagesFlyweight.put(url, bm);//Store for the future reuse
                     img.post(new Runnable() {
                         @Override
                         public void run() {
-                            //Show loaded image
-                            img.setImageBitmap(bm);
+                            img.setImageBitmap(bm);//Show loaded image
                         }
                     });
                 } catch (IOException e) {
