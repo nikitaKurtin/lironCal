@@ -10,6 +10,7 @@ import android.widget.TextView;
 import kurtin.nikita.androidtask.R;
 import kurtin.nikita.androidtask.models.Playlist;
 import kurtin.nikita.androidtask.models.Video;
+import kurtin.nikita.androidtask.observers.VideoClickListener;
 import kurtin.nikita.androidtask.utils.ImageManager;
 
 /**
@@ -43,7 +44,7 @@ public class PlaylistViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void showPlaylistVideos(){
-        ViewGroup videosView = playlistView.findViewById(R.id.playlistVideos);
+        ViewGroup allVideos = playlistView.findViewById(R.id.playlistVideos);
         for(Video video : playlist.getVideos()){
             View videoView = LayoutInflater.from(playlistView.getContext()).inflate(R.layout.item_video, null);
             videoView.setTag(video);
@@ -51,7 +52,8 @@ public class PlaylistViewHolder extends RecyclerView.ViewHolder {
             videoTtl.setText(video.getTitle());
             ImageView videoImg = videoView.findViewById(R.id.videoImg);
             ImageManager.showImage(videoImg, video.getImgUrl());
-            videosView.addView(videoView);
+            videoView.setOnClickListener(new VideoClickListener());
+            allVideos.addView(videoView);
         }
     }
 
