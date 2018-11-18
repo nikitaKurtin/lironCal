@@ -2,15 +2,15 @@
 
   ## [Task](https://bitbucket.org/caldigitalteam/calintreview#markdown-header-task) 
   
-  1. Creating Github repository - [X]
+  1. Creating Github repository.
   2. Android app that accomplishes the following:
-     1. Load list of youtube videos grouped into playlists, from [this link](https://sandbox.cal-online.co.il/youtube/playlists.json) - [X]
-     2. Create a [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView) that shows each of the playlists as list items - [X]
-     3. When a playlist item is clicked, the app should drill down and show all video items of the selected playlist with their corresponding thumbnail image - [X]
-     4. When a video item is clicked, the youtube video starts playing immediately - [X]
+     - [X] Load list of youtube videos grouped into playlists, from [this link](https://sandbox.cal-online.co.il/youtube/playlists.json) 
+     - [X] Create a [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView) that shows each of the playlists as list items.
+     - [X] When a playlist item is clicked, the app should drill down and show all video items of the selected playlist with their corresponding thumbnail image.
+     - [X] When a video item is clicked, the youtube video starts playing immediately.
        - I've implemented both techniques, using an [implicit Intent](https://developer.android.com/training/basics/intents/sending#Build) and the custom [YouTubePlayerView](https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayerView). 
-     5. After viewing the video user is able to navigate back to the list view and continue from where he left off - [X]
-  3. Adding a [debug APK](https://github.com/nikitaKurtin/lironCal/blob/master/AndroidTask.apk) (No defense techniques used) - [X] 
+     - [X] After viewing the video user is able to navigate back to the list view and continue from where he left off.
+  3. Adding a [debug APK](https://github.com/nikitaKurtin/lironCal/blob/master/AndroidTask.apk) (No defense techniques used).
 
   ## Implemented Design Patterns
    1. MVW - (Model-View-Whatever) architectural pattern based on decoupling Model and View objects, that is flexible to be used not only for MVP, but any other MV combinations as well. 
