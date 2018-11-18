@@ -12,7 +12,7 @@ public final class Api {
     public static final String taskUrl = baseUrl+"/youtube/playlists.json";
 
     public final static class Youtube{
-        public static final String API_KEY = "AIzaSyAaGqg8DvqEZTDDsW_-bJDQNMEwJqH3Brc";
+        public static final String API_KEY = null;//API key goes here
     }
 
 }
